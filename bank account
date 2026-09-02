@@ -1,0 +1,22 @@
+balance = float(input("enter account balance: "))
+ammount = float(input("enter the ammount to withdrawl: "))
+account_type = input("enter account type(saving/current): ")
+transaction_type = input("enter transaction type(withdrawl/deposit): ")
+
+if ammount <= 0:
+    print("not allowed")
+    
+elif transaction_type == "deposit":
+    balance = balance + ammount
+    print("new balance:", balance)
+    
+elif transaction_type == "withdrawl":
+    if ammount > balance:
+        print("transaction not allowed")
+    elif account_type == "saving" & balance - ammount < 0:
+        print("not allowed")
+    elif account_type == "current" & balance - ammount < 0:
+        print("not allowed")
+    else:
+        balance = balance - ammount
+        print("new balance:", balance)
