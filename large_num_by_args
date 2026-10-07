@@ -1,0 +1,11 @@
+def largest(*args):
+    large = args[0]
+
+    for i in args:
+        if i > large:
+            large = i
+
+    return large
+
+
+print(largest(10, 25, 55, 23, 20))
