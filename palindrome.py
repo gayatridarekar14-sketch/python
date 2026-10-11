@@ -1,14 +1,16 @@
-number = int(input("Enter a number: "))
+def is_palindrome(text, left=0, right=None):
+    
+    if right is None:
+        right = len(text) - 1
 
-original_num = number
-reverse = 0
+    if left >= right:
+        return True
 
-while number != 0:
-    digit = number % 10
-    reverse = reverse * 10 + digit
-    number = number // 10
+    if text[left] != text[right]:
+        return False
 
-if original_num == reverse:
-    print("num is palindrome")
-else:
-    print("num not a palindrome")
+    return is_palindrome(text, left + 1, right - 1)
+
+
+print(is_palindrome("racecar"))  
+print(is_palindrome("python"))   
